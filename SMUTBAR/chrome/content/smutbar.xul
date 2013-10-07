@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<overlay id="SMUT-Overlay"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+		 
+		<toolbox id="navigator-toolbox">
+		    <toolbar id="SMUT-Toolbar" toolbarname="SMU Toolbar" accesskey="T" class="chromeclass-toolbar" context="toolbar-context-menu" hidden="false" persist="hidden">
+			    <toolbarbutton id="SMUT-Web-Button" tooltiptext="Search the SMU Website" label="SMU Search" oncommand="objSMUToolbar.Search(event, 'smu')" />
+				
+				<toolbaritem flex="0">
+					<toolbarbutton id="SMUT-MainMenu" type="menu" tooltiptext="SMU Toolbar Main Menu">
+                        <menupopup>
+                            <menuitem label="SMU Home Page" accesskey="G" oncommand="objTutorialToolbar.LoadURL('http://www.smu.ca/')" />
+                            <menuseparator />
+                            <menuitem label="Google Home Page" accesskey="B" oncommand="objTutorialToolbar.LoadURL('http://www.google.ca/')" />
+                        </menupopup>
+                    </toolbarbutton>
+				</toolbaritem>
+				
+				<toolbaritem id="SMUT-SearchTerms-TBItem" persist="width">
+                    <menulist id="SMUT-SearchTerms" editable="true" flex="1" minwidth="100" width="250" onkeypress="objTutorialToolbar.KeyHandler(event);">
+                        <menupopup id="SMUT-SearchTermsMenu" onpopupshowing="objTutorialToolbar.Populate()" />
+                    </menulist>
+                </toolbaritem>
+				
+				<splitter id="SMUT-ResizeSplitter" state="open" collapse="none" resizebefore="closest" resizeafter="farthest" tooltiptext="Resize the Search Box">
+                    <vbox id="SMUT-ResizeBar" />
+                </splitter>
+				
+				<toolbaritem flex="0">
+					<toolbarbutton id="SMUT-Combined-Button" label="Search" type="menu-button" tooltiptext="Combined Search" oncommand="objSMUToolbar.Search(event, 'smu')">
+						<menupopup>
+							<menuitem id="SMUT-Combined-Web" label="Web Search" class="menuitem-iconic" oncommand="objSMUToolbar.Search(event, 'smu'); event.stopPropagation();" />
+
+							<menuitem id="SMUT-Combined-Image" label="Image Search" class="menuitem-iconic" oncommand="objSMUToolbar.Search(event, 'image'); event.stopPropagation();" />
+						</menupopup>
+					</toolbarbutton>
+					<toolbarseparator />
+					<toolbarbutton id="SMUT-Web-Button" tooltiptext="Search the Web" label="Web Search" oncommand="objSMUToolbar.Search(event, 'web')" />
+				</toolbaritem>
+            </toolbar>
+        </toolbox>
+</overlay>

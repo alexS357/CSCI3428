@@ -20,9 +20,9 @@
         </em:targetApplication>
 
         <!-- Optional Items -->
-        <em:creator>Your Name</em:creator>
-        <em:description>A description of the extension</em:description>
-        <em:homepageURL>http://www.yoursite.com/</em:homepageURL>
+        <em:creator>Alex Jack Ben Mukul</em:creator>
+        <em:description>Saint Mary's University Toolbar</em:description>
+        <em:homepageURL>http://www.smu.ca/</em:homepageURL>
 
     </Description>
 </RDF>
